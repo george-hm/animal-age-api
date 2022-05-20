@@ -2,15 +2,17 @@
 
 Serverless project with an API endpoint to get cat and dog years based on the human age given
 
+Make sure you're on node 14.x
+
 ## How to test
-- npm install
-- npm run invoke-local-animal-age
+- `npm install`
+- `npm run invoke-local-animal-age`
 - Change test input by editing `src/animal_age_get/event.json`
 
 ## How to deploy
-- npm install
+- `npm install`
 - export AWS credentials to terminal
-- npm run deploy
+- `npm run deploy`
 - Call the endpoint in the output with a query string param 'age'
 
 ## Endpoint
