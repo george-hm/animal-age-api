@@ -1,0 +1,32 @@
+# For full config options, check the docs:
+#    docs.serverless.com
+
+service: animal-service
+
+provider:
+    name: aws
+    runtime: nodejs14.x
+    stage: prod
+    region: ${self:custom.envpath.region}
+
+package:
+    individually: true
+
+plugins:
+    - serverless-prune-plugin
+    - serverless-plugin-optimize
+
+custom:
+    envpath: "${file(./serverless.env.yml):${opt:stage, self:provider.stage}}"
+
+functions:
+    animal_age_get:
+        handler: src/animal_age_get/handler.handler
+        timeout: 5
+        memorySize: 128
+        events:
+        - http:
+            path: /animal
+            method: GET
+            integration: lambda-proxy
+            cors: true
