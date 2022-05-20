@@ -1,0 +1,23 @@
+{
+  "name": "animal-age-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "invoke-local-animal-age": "serverless invoke local -s dev -f animal_age_get -p src/animal_age_get/event.json",
+    "deploy" : "serverlss deploy -s prod",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "George Meadows",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.15.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-es": "^4.1.0",
+    "eslint-plugin-import": "^2.26.0",
+    "serverless": "^3.18.0",
+    "serverless-plugin-optimize": "^4.2.1-rc.1",
+    "serverless-prune-plugin": "^2.0.1"
+  }
+}
