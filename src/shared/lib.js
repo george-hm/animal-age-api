@@ -13,15 +13,12 @@ export function createResponse(status, body, location) {
         statusCode: status,
         headers: {
             'Access-Control-Allow-Origin': '*',
-            Location: '',
         },
         body: JSON.stringify(body) || '{}',
     };
 
     if (location) {
         response.headers.Location = location;
-    } else {
-        delete response.headers.Location;
     }
 
     return response;
